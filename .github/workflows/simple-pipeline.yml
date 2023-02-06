@@ -16,7 +16,7 @@ jobs:
 
     - name: Increase patch version
       run:
-          grep '<version>.*</version>' my-app/pom.xml | head -n 1
+          grep '.*<version>.*\.\([0-9]\+\)<\/version>.*/\1/p' my-app/pom.xml | head -n 1
           # sed -n '0,s/.*<version>.*\.\([0-9]\+\)<\/version>.*/\1/p' my-app/pom.xml
     #     patch_version=$(sed -n 's/.*<version>.*\.\([0-9]\+\)<\/version>.*/\1/p' my-app/pom.xml)
     #     new_patch_version=$((patch_version + 1))
