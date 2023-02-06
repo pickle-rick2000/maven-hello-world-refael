@@ -27,7 +27,5 @@ jobs:
         git add my-app/pom.xml
         git commit -m "update patch version to 1.0.$new_patch_version"
 
-    - name: Push Changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+    # - name: Add and Commit Changes
+    #   run: |
