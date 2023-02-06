@@ -20,17 +20,14 @@ jobs:
         new_patch_version=$((patch_version + 1))
         sed -i "s/<version>.*\.$patch_version<\/version>/<version>1.0.$new_patch_version<\/version>/g" my-app/pom.xml
     
-    - name: Commit and push changes
-      uses: stefanzweifel/git-auto-commit-action@v4
+    - name: Add and Commit Changes
+      run: |
+        git config --global user.email "jhony@somemail.com>"
+        git config --global user.name "jhony"
+        git add my-app/pom.xml
+        git commit -m "update patch version to 1.0.$new_patch_version"
+
+    - name: Push Changes
+      uses: ad-m/github-push-action@main
       with:
-        commit_message: "update patch version to 1.0.$new_patch_version"
-
-
-      # uses: actions/github-script@0.8.0
-      # with:
-      #   script: |
-      #     git config --global user.email "jhony@somemail.com"
-      #     git config --global user.name "gitlab actions pipeline"
-      #     git add my-app/pom.xml
-      #     git commit -m "update patch version to 1.0.$new_patch_version"
-      #     git push
+        github_token: ${{ secrets.GITHUB_TOKEN }}
