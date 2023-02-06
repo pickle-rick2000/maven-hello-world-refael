@@ -27,4 +27,4 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git add pom.xml
           git commit -m "uodate patch version to 1.0.$new_patch_version"
-          git push origin main
+          git push origin master
