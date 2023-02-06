@@ -4,7 +4,7 @@
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.3</version>
+  <version>1.0.4</version>
   <name>my-app</name>
   <url>http://maven.apache.org</url>
 
@@ -17,7 +17,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>1.0.3</version>
+      <version>1.0.4</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -41,7 +41,7 @@
       <plugin>
 	<groupId>org.codehaus.mojo</groupId>
 	<artifactId>exec-maven-plugin</artifactId>
-	<version>1.0.3</version>
+	<version>1.0.4</version>
 	<executions>
 	  <execution>
 	    <goals>
@@ -59,7 +59,7 @@
       <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
 	<artifactId>maven-shade-plugin</artifactId>
-	<version>1.0.3</version>
+	<version>1.0.4</version>
 	<executions>
 	  <execution>
 	    <phase>package</phase>
@@ -80,7 +80,7 @@
           <!-- This plugin will set the properties values using dependency information -->
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>2.3</version>
+          <version>1.0.4</version>
           <executions>
               <execution>
                   <goals>
