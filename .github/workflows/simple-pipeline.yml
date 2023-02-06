@@ -18,7 +18,7 @@ jobs:
       run: |
         patch_version=$(sed -n 's/.*<version>.*\.\([0-9]\+\)<\/version>.*/\1/p' my-app/pom.xml | head -n 1)
         new_patch_version=$((patch_version + 1))
-        sed -i "0,s/<version>.*\.$patch_version<\/version>/<version>1.0.$new_patch_version<\/version>/g" my-app/pom.xml
+        sed -i "s/<version>.*\.$patch_version<\/version>/<version>1.0.$new_patch_version<\/version>/g" my-app/pom.xml
     
     - name: Add and Commit Changes
       run: |
@@ -30,3 +30,14 @@ jobs:
     - name: Push changes
       run: |
         git push
+  
+  compile-code-:
+    name: compile-code
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Compile Maven Code
+        run: mvn compile
