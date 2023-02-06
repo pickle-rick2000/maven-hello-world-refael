@@ -14,14 +14,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Open Web Client Directory
-      run: |
-        ls -la
-
     - name: Increase patch version
       run: |
         patch_version=$(sed -n 's/.*<version>.*\.\([0-9]\+\)<\/version>.*/\1/p' my-app/pom.xml)
+        echo $patch_version
         new_patch_version=$((patch_version + 1))
+        echo $new_patch_version
         sed -i "s/<version>.*\.$patch_version<\/version>/<version>1.0.$new_patch_version<\/version>/g" pom.xml
     - name: Commit and push changes
       uses: actions/github-script@0.8.0
