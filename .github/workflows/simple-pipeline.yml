@@ -28,6 +28,6 @@ jobs:
         git commit -m "update patch version to 1.0.$new_patch_version"
 
     - name: Push Changes
-      uses: ad-m/github-push-action@main
+      uses: ad-m/github-push-action
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
