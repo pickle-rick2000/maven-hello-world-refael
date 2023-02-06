@@ -22,7 +22,7 @@ jobs:
     
     - name: Commit and push changes
       uses: stefanzweifel/git-auto-commit-action@v4
-       with:
+      with:
         commit_message: "update patch version to 1.0.$new_patch_version"
 
 
