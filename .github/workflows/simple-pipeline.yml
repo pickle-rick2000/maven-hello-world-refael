@@ -35,9 +35,9 @@ jobs:
     name: compile-code
     runs-on: ubuntu-latest
 
-      steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Compile Maven Code
-        run: mvn compile
+    - name: Compile Maven Code
+      run: mvn compile
