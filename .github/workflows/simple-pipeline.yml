@@ -40,4 +40,6 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Compile Maven Code
-      run: mvn compile
+      run: | 
+        cd my-app
+        mvn compile
