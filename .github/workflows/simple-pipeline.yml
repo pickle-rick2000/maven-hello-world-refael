@@ -27,5 +27,6 @@ jobs:
         git add my-app/pom.xml
         git commit -m "update patch version to 1.0.$new_patch_version"
 
-    # - name: Add and Commit Changes
-    #   run: |
+    - name: Push changes
+      run: |
+        git push
