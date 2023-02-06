@@ -26,6 +26,6 @@ jobs:
         script: |
           git config --global user.email "jhony@somemail.com"
           git config --global user.name "gitlab actions pipeline"
-          git add pom.xml
+          git add my-app/pom.xml
           git commit -m "update patch version to 1.0.$new_patch_version"
           git push
